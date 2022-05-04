@@ -1,0 +1,72 @@
+---- Minecraft Crash Report ----
+// Don't do that.
+
+Time: 3/4/22 1:32 PM
+Description: Initializing game
+
+java.lang.NullPointerException: Initializing game
+	at juul.inject.LUT.getMethodName(LUT.java:47)
+	at juul.inject.wrappers.MinecraftWrapper.getMinecraftName(MinecraftWrapper.java:82)
+	at juul.inject.wrappers.MinecraftWrapper.getMinecraft(MinecraftWrapper.java:26)
+	at juul.util.Constants.getMinecraft(Constants.java:15)
+	at juul.Juul.init(Juul.java:46)
+	at net.minecraft.client.Minecraft.startGame(Minecraft.java:563)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:398)
+	at net.minecraft.client.main.Main.main(Main.java:114)
+	at Start.main(Start.java:11)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Stacktrace:
+	at juul.inject.LUT.getMethodName(LUT.java:47)
+	at juul.inject.wrappers.MinecraftWrapper.getMinecraftName(MinecraftWrapper.java:82)
+	at juul.inject.wrappers.MinecraftWrapper.getMinecraft(MinecraftWrapper.java:26)
+	at juul.util.Constants.getMinecraft(Constants.java:15)
+	at juul.Juul.init(Juul.java:46)
+	at net.minecraft.client.Minecraft.startGame(Minecraft.java:563)
+
+-- Initialization --
+Details:
+Stacktrace:
+	at net.minecraft.client.Minecraft.run(Minecraft.java:398)
+	at net.minecraft.client.main.Main.main(Main.java:114)
+	at Start.main(Start.java:11)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.8
+	Operating System: Windows 10 (amd64) version 10.0
+	Java Version: 1.8.0_292, AdoptOpenJDK
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode), AdoptOpenJDK
+	Memory: 260958776 bytes (248 MB) / 552075264 bytes (526 MB) up to 3806855168 bytes (3630 MB)
+	JVM Flags: 0 total; 
+	IntCache: cache: 0, tcache: 0, allocated: 0, tallocated: 0
+	Launched Version: mcp
+	LWJGL: 2.9.1
+	OpenGL: NVIDIA GeForce GTX 1650/PCIe/SSE2 GL version 4.6.0 NVIDIA 511.65, NVIDIA Corporation
+	GL Caps: Using GL 1.3 multitexturing.
+Using GL 1.3 texture combiners.
+Using framebuffer objects because OpenGL 3.0 is supported and separate blending is supported.
+Shaders are available because OpenGL 2.1 is supported.
+VBOs are available because OpenGL 1.5 is supported.
+
+	Using VBOs: No
+	Is Modded: Very likely; Jar signature invalidated
+	Type: Client (map_client.txt)
+	Resource Packs: []
+	Current Language: English (US)
+	Profiler Position: N/A (disabled)
+	OptiFine Version: OptiFine_1.8_HD_U_H6
+	Render Distance Chunks: 8
+	Mipmaps: 4
+	Anisotropic Filtering: 1
+	Antialiasing: 0
+	Multitexture: false
+	Shaders: null
+	OpenGlVersion: 4.6.0 NVIDIA 511.65
+	OpenGlRenderer: NVIDIA GeForce GTX 1650/PCIe/SSE2
+	OpenGlVendor: NVIDIA Corporation
+	CpuCount: 6

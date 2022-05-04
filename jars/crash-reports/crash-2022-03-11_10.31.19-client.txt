@@ -1,0 +1,103 @@
+---- Minecraft Crash Report ----
+// Don't do that.
+
+Time: 3/11/22, 10:31 AM
+Description: Updating screen events
+
+java.lang.ArrayIndexOutOfBoundsException: Array index out of range: 8
+	at java.base/java.util.ImmutableCollections$ListN.get(ImmutableCollections.java:680)
+	at juul.Juul.cycleTheme(Juul.java:40)
+	at juul.module.render.themedebug.onDisable(themedebug.java:23)
+	at juul.module.Module.disable(Module.java:68)
+	at juul.module.Module.toggle(Module.java:73)
+	at juul.ui.GUI.mouseClicked(GUI.java:598)
+	at net.minecraft.client.gui.GuiScreen.handleMouseInput(GuiScreen.java:585)
+	at net.minecraft.client.gui.GuiScreen.handleInput(GuiScreen.java:554)
+	at net.minecraft.client.Minecraft.runTick(Minecraft.java:1786)
+	at net.minecraft.client.Minecraft.runGameLoop(Minecraft.java:1113)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:420)
+	at net.minecraft.client.main.Main.main(Main.java:114)
+	at Start.main(Start.java:11)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Stacktrace:
+	at java.base/java.util.ImmutableCollections$ListN.get(ImmutableCollections.java:680)
+	at juul.Juul.cycleTheme(Juul.java:40)
+	at juul.module.render.themedebug.onDisable(themedebug.java:23)
+	at juul.module.Module.disable(Module.java:68)
+	at juul.module.Module.toggle(Module.java:73)
+	at juul.ui.GUI.mouseClicked(GUI.java:598)
+	at net.minecraft.client.gui.GuiScreen.handleMouseInput(GuiScreen.java:585)
+	at net.minecraft.client.gui.GuiScreen.handleInput(GuiScreen.java:554)
+
+-- Affected screen --
+Details:
+	Screen name: juul.ui.GUI
+
+-- Affected level --
+Details:
+	Level name: MpServer
+	All players: 1 total; [EntityPlayerSP['Player312'/150, l='MpServer', x=153.02, y=79.00, z=178.36]]
+	Chunk stats: MultiplayerChunkCache: 285, 285
+	Level seed: 0
+	Level generator: ID 00 - default, ver 1. Features enabled: false
+	Level generator options: 
+	Level spawn location: 72.00,64.00,256.00 - World: (72,64,256), Chunk: (at 8,4,0 in 4,16; contains blocks 64,0,256 to 79,255,271), Region: (0,0; contains chunks 0,0 to 31,31, blocks 0,0,0 to 511,255,511)
+	Level time: 15622 game time, 15622 day time
+	Level dimension: 0
+	Level storage version: 0x00000 - Unknown?
+	Level weather: Rain time: 0 (now: false), thunder time: 0 (now: false)
+	Level game mode: Game mode: creative (ID 1). Hardcore: false. Cheats: false
+	Forced entities: 49 total; [EntityBat['Bat'/128, l='MpServer', x=216.16, y=30.81, z=124.06], EntityZombie['Zombie'/133, l='MpServer', x=224.13, y=20.00, z=219.91], EntityZombie['Zombie'/134, l='MpServer', x=222.56, y=21.00, z=220.47], EntityZombie['Zombie'/135, l='MpServer', x=224.50, y=20.00, z=222.50], EntityPlayerSP['Player312'/150, l='MpServer', x=153.02, y=79.00, z=178.36], EntityZombie['Zombie'/52, l='MpServer', x=76.97, y=17.00, z=104.38], EntityZombie['Zombie'/53, l='MpServer', x=79.50, y=17.00, z=104.50], EntityZombie['Zombie'/54, l='MpServer', x=76.50, y=17.00, z=107.50], EntitySpider['Spider'/57, l='MpServer', x=89.03, y=33.00, z=113.72], EntityZombie['Zombie'/58, l='MpServer', x=84.66, y=18.00, z=162.09], EntityZombie['Zombie'/59, l='MpServer', x=92.13, y=17.00, z=162.50], EntityBat['Bat'/60, l='MpServer', x=94.56, y=24.91, z=242.44], EntityBat['Bat'/63, l='MpServer', x=103.50, y=22.28, z=119.44], EntitySpider['Spider'/64, l='MpServer', x=107.69, y=21.00, z=130.28], EntitySkeleton['Skeleton'/65, l='MpServer', x=99.28, y=17.00, z=171.50], EntitySkeleton['Skeleton'/66, l='MpServer', x=111.66, y=28.00, z=216.13], EntityCreeper['Creeper'/79, l='MpServer', x=114.69, y=21.00, z=133.71], EntitySkeleton['Skeleton'/80, l='MpServer', x=122.50, y=21.00, z=158.50], EntityZombie['Zombie'/81, l='MpServer', x=120.13, y=21.00, z=158.53], EntityZombie['Zombie'/82, l='MpServer', x=116.50, y=21.00, z=157.50], EntitySkeleton['Skeleton'/83, l='MpServer', x=120.50, y=21.00, z=156.50], EntitySkeleton['Skeleton'/84, l='MpServer', x=118.46, y=21.84, z=167.48], EntityCreeper['Creeper'/85, l='MpServer', x=120.50, y=21.00, z=161.47], EntityZombie['Zombie'/86, l='MpServer', x=117.50, y=21.00, z=165.50], EntitySkeleton['Skeleton'/87, l='MpServer', x=120.01, y=21.08, z=162.46], EntityZombie['Zombie'/88, l='MpServer', x=117.50, y=21.00, z=166.50], EntityZombie['Zombie'/89, l='MpServer', x=124.55, y=21.01, z=159.25], EntityEnderman['Enderman'/90, l='MpServer', x=124.39, y=23.00, z=165.28], EntityCreeper['Creeper'/91, l='MpServer', x=121.50, y=21.00, z=177.50], EntityZombie['Zombie'/92, l='MpServer', x=122.50, y=22.00, z=189.50], EntityZombie['Zombie'/93, l='MpServer', x=121.50, y=29.00, z=201.50], EntitySkeleton['Skeleton'/94, l='MpServer', x=124.66, y=26.00, z=212.16], EntityCreeper['Creeper'/95, l='MpServer', x=123.53, y=26.00, z=215.02], EntityCreeper['Creeper'/96, l='MpServer', x=112.50, y=69.00, z=246.50], EntitySkeleton['Skeleton'/98, l='MpServer', x=138.50, y=36.00, z=172.50], EntitySkeleton['Skeleton'/99, l='MpServer', x=142.50, y=38.00, z=176.50], EntitySkeleton['Skeleton'/100, l='MpServer', x=143.50, y=49.00, z=187.09], EntityVillager['Villager'/101, l='MpServer', x=142.44, y=62.18, z=177.31], EntityZombie['Zombie'/102, l='MpServer', x=149.31, y=40.00, z=159.88], EntityCreeper['Creeper'/103, l='MpServer', x=155.97, y=25.00, z=180.50], EntityCreeper['Creeper'/104, l='MpServer', x=156.50, y=23.00, z=184.50], EntityZombie['Zombie'/105, l='MpServer', x=146.88, y=17.00, z=204.72], EntityCreeper['Creeper'/106, l='MpServer', x=166.50, y=26.00, z=127.50], EntityCreeper['Creeper'/107, l='MpServer', x=170.97, y=27.00, z=129.38], EntityCreeper['Creeper'/108, l='MpServer', x=167.38, y=26.00, z=128.84], EntitySkeleton['Skeleton'/109, l='MpServer', x=171.16, y=32.00, z=141.44], EntitySkeleton['Skeleton'/110, l='MpServer', x=165.19, y=24.00, z=190.78], EntityCreeper['Creeper'/111, l='MpServer', x=162.69, y=79.00, z=181.38], EntityBat['Bat'/118, l='MpServer', x=188.44, y=30.10, z=99.81]]
+	Retry entities: 0 total; []
+	Server brand: vanilla
+	Server type: Integrated singleplayer server
+Stacktrace:
+	at net.minecraft.client.multiplayer.WorldClient.addWorldInfoToCrashReport(WorldClient.java:405)
+	at net.minecraft.client.Minecraft.addGraphicsAndWorldToCrashReport(Minecraft.java:2784)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:442)
+	at net.minecraft.client.main.Main.main(Main.java:114)
+	at Start.main(Start.java:11)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.8
+	Operating System: Windows 10 (amd64) version 10.0
+	Java Version: 16.0.2, International Business Machines Corporation
+	Java VM Version: Eclipse OpenJ9 VM (JRE 16 Windows 10 amd64-64-Bit Compressed References 20210730_69 (JIT enabled, AOT enabled)
+OpenJ9   - 1851b0074
+OMR      - 9db1c870d
+JCL      - 34df42439f3 based on jdk-16.0.2+7), Eclipse OpenJ9
+	Memory: 77210136 bytes (73 MB) / 336527360 bytes (320 MB) up to 8560181248 bytes (8163 MB)
+	JVM Flags: 3 total; -Xoptionsfile=C:\Users\itrqp\.jdks\semeru-16.0.2\lib\options.default -Xlockword:mode=default,noLockword=java/lang/String,noLockword=java/util/MapEntry,noLockword=java/util/HashMap$Entry,noLockword=org/apache/harmony/luni/util/ModifiedMap$Entry,noLockword=java/util/Hashtable$Entry,noLockword=java/lang/invoke/MethodType,noLockword=java/lang/invoke/MethodHandle,noLockword=java/lang/invoke/CollectHandle,noLockword=java/lang/invoke/ConstructorHandle,noLockword=java/lang/invoke/ConvertHandle,noLockword=java/lang/invoke/ArgumentConversionHandle,noLockword=java/lang/invoke/AsTypeHandle,noLockword=java/lang/invoke/ExplicitCastHandle,noLockword=java/lang/invoke/FilterReturnHandle,noLockword=java/lang/invoke/DirectHandle,noLockword=java/lang/invoke/ReceiverBoundHandle,noLockword=java/lang/invoke/DynamicInvokerHandle,noLockword=java/lang/invoke/FieldHandle,noLockword=java/lang/invoke/FieldGetterHandle,noLockword=java/lang/invoke/FieldSetterHandle,noLockword=java/lang/invoke/StaticFieldGetterHandle,noLockword=java/lang/invoke/StaticFieldSetterHandle,noLockword=java/lang/invoke/IndirectHandle,noLockword=java/lang/invoke/InterfaceHandle,noLockword=java/lang/invoke/VirtualHandle,noLockword=java/lang/invoke/PrimitiveHandle,noLockword=java/lang/invoke/InvokeExactHandle,noLockword=java/lang/invoke/InvokeGenericHandle,noLockword=java/lang/invoke/VarargsCollectorHandle,noLockword=java/lang/invoke/ThunkTuple -Xjcl:jclse29
+	IntCache: cache: 1, tcache: 1, allocated: 12, tallocated: 94
+	Launched Version: mcp
+	LWJGL: 2.9.1
+	OpenGL: NVIDIA GeForce RTX 2070 Super/PCIe/SSE2 GL version 4.6.0 NVIDIA 496.49, NVIDIA Corporation
+	GL Caps: Using GL 1.3 multitexturing.
+Using GL 1.3 texture combiners.
+Using framebuffer objects because OpenGL 3.0 is supported and separate blending is supported.
+Shaders are available because OpenGL 2.1 is supported.
+VBOs are available because OpenGL 1.5 is supported.
+
+	Using VBOs: No
+	Is Modded: Very likely; Jar signature invalidated
+	Type: Client (map_client.txt)
+	Resource Packs: []
+	Current Language: English (US)
+	Profiler Position: N/A (disabled)
+	OptiFine Version: OptiFine_1.8_HD_U_H6
+	Render Distance Chunks: 8
+	Mipmaps: 4
+	Anisotropic Filtering: 1
+	Antialiasing: 0
+	Multitexture: false
+	Shaders: null
+	OpenGlVersion: 4.6.0 NVIDIA 496.49
+	OpenGlRenderer: NVIDIA GeForce RTX 2070 Super/PCIe/SSE2
+	OpenGlVendor: NVIDIA Corporation
+	CpuCount: 12
